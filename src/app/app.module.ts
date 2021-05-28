@@ -14,6 +14,7 @@ import { RouterModule } from '@angular/router';
 import { MedicationComponent } from './pages/medication/medication.component';
 import { IngredientComponent } from './pages/ingredient/ingredient.component';
 import { BatchComponent } from './pages/batch/batch.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { BatchComponent } from './pages/batch/batch.component';
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
+    MatSidenavModule,
     RouterModule.forRoot([
       {path: 'home', component: HomeComponent},
       {path: 'medication-list', component: MedicationComponent},

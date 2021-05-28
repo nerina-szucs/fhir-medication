@@ -1,12 +1,9 @@
-.navtitle {
-    margin-right:5%;
-}
 medication-icon, ingredient-icon, batch-icon {
     line-height:150%;
     padding-right:5%;
 }
 [mat-raised-button]:not(:last-child) {
-    margin-right:10%;
+    margin-right:2%;
 }
 [mat-raised-button]:first-child {
     background-color:#E49501 !important;
@@ -17,6 +14,10 @@ medication-icon, ingredient-icon, batch-icon {
     background-color:#C22363 !important;
     color:#fff;
     text-shadow:1px 1px 5px #8C1A47;
+}
+
+[mat-raised-button] {
+    min-width:80px;
 }
   
   mat-toolbar {
@@ -29,6 +30,16 @@ medication-icon, ingredient-icon, batch-icon {
     text-shadow:1px 1px 5px #002D6B;
   }
 
-  .navtitle > a {
-      font-size:20px;
+  mat-toolbar-row > a {
+    font-size: 18px;
+    margin-right:2%;
   }
+  mat-sidenav-container, mat-sidenav-content, mat-sidenav {
+    height: 100%;
+}
+mat-sidenav {
+    width: 250px;
+}
+main {
+    padding: 10px;
+}
