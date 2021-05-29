@@ -1,14 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IngredientComponent } from './ingredient.component';
+import { ListIngredientComponent } from './list-ingredient.component';
+
 
 
 @NgModule({
   declarations: [
-    IngredientComponent
+    ListIngredientComponent
   ],
   imports: [
     CommonModule
   ]
 })
-export class IngredientModule { }
+export class ListIngredientModule { }

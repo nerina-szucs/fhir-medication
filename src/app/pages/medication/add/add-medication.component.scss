@@ -1,4 +1,14 @@
-#addmedicationform {
+.form-container {
     position:fixed;
-    left:30%;
+    margin-left:20%;
+    margin-right:20%;
+}
+mat-form-field, h1 {
+    width:150% !important;
+}
+h1 {
+    text-align:center;
+}
+button {
+    margin-left:50%;
 }

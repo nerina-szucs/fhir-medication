@@ -1,14 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IngredientComponent } from './ingredient.component';
+import { ListBatchComponent } from './list-batch.component';
+
 
 
 @NgModule({
   declarations: [
-    IngredientComponent
+    ListBatchComponent
   ],
   imports: [
     CommonModule
   ]
 })
-export class IngredientModule { }
+export class ListBatchModule { }

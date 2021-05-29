@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MedicationService } from 'src/app/shared/medication.service';
 
 @Component({
   selector: 'app-list-medication',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListMedicationComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service: MedicationService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.getMedications();
   }
 
+  medication: any;
+   getMedications = () =>
+      this.service
+      .getMedications()
+      .subscribe(res =>(this.medication = res));
+
+  displayedColumns: string[] = ['code', 'status', 'manufacturer', 'form', 'amount', 'delete', 'update'];
+
+  markCompleted = (data: any) => this.service.updateMedication(data);
+
+  deleteMedication = (data: any) => this.service.deleteMedication(data);
 }

@@ -4,7 +4,7 @@ import { AddMedicationComponent } from './add-medication.component';
 import { FormGroup, FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-
+import {NgForm} from '@angular/forms';
 
 
 @NgModule({
@@ -15,6 +15,7 @@ import { MatInputModule } from '@angular/material/input';
     CommonModule,
     FormControl,
     FormGroup,
+    NgForm,
     FormsModule,
     MatFormFieldModule,
     ReactiveFormsModule,

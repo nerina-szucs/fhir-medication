@@ -1,0 +1,24 @@
+button {
+    background-color: #fff;
+    color:#000;
+}
+.card-container {
+    display:flex;
+}
+mat-card {
+    width:50%;
+    margin:5%;
+}
+mat-card:first-of-type {
+    background-color:#004EB1;
+    color:#FFF;
+}
+mat-card:nth-of-type(2) {
+    background-color: #FFFFFF;
+}
+mat-card-title {
+    margin-bottom:20% !important;
+}
+mat-card-content {
+    text-align:center;
+}

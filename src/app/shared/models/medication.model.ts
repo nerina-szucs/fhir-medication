@@ -1,5 +1,5 @@
 export interface Medication {
-    identifier?: string;
+    id?: string;
     code?: number | string;
     status?: "active" | "inactive" | "entered-in-error";
     manufacturer?: string;
