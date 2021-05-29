@@ -5,12 +5,12 @@ medication-icon, ingredient-icon, batch-icon {
 [mat-raised-button]:not(:last-child) {
     margin-right:2%;
 }
-[mat-raised-button]:first-child {
+[mat-raised-button]:nth-child(2) {
     background-color:#E49501 !important;
     color:#fff;
     text-shadow: 1px 1px 5px #BA7901;
 }
-[mat-raised-button]:nth-child(2) {
+[mat-raised-button]:nth-child(3) {
     background-color:#C22363 !important;
     color:#fff;
     text-shadow:1px 1px 5px #8C1A47;
