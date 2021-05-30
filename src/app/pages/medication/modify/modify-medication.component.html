@@ -1,14 +1,46 @@
 <div class="form-container">
-    <h1>Modify medication</h1>
-    <form [formGroup]="form">
+  <h1>Modify medication</h1>
+  <form [formGroup]="form">
+    <p>
+      <mat-form-field class="max-width" appearance="outline">
+        <mat-label>Code</mat-label>
+        <input matInput type="text" name="code" placeholder="SNOMED CT Medication Codes" formControlName="code">
+      </mat-form-field>
+      </p>
       <p>
-        <mat-form-field class="max-width" appearance="outline">
-          <mat-label>Code</mat-label>
-          <input type="text" name="code" matInput formControlName="code">
+      <mat-form-field class="max-width" appearance="outline">
+        <mat-label>Status</mat-label>
+        <mat-select formControlName="status">
+          <mat-option *ngFor="let status of statusesList" [value]="status">
+            {{status}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      </p>
+      <p>
+      <mat-form-field class="max-width" appearance="outline">
+        <mat-label>Manufacturer</mat-label>
+        <input type="text" name="manufacturer" matInput placeholder="Bayer" formControlName="manufacturer">
+      </mat-form-field>
+      </p>
+      <p>
+      <mat-form-field class="max-width" appearance="outline">
+        <mat-label>Form</mat-label>
+        <mat-select formControlName="form">
+          <mat-option *ngFor="let form of formsList" [value]="form">
+            {{form}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      </p>
+      <p>
+      <mat-form-field class="max-width" appearance="outline">
+          <mat-label>Amount</mat-label>
+          <input type="tect" name="amount" matInput placeholder="3 ml" formControlName="amount">
         </mat-form-field>
         </p>
-          <p class="button-container">
-        <button type="submit" mat-raised-button color="primary" class="max-width" [mat-dialog-close]="form.value" [disabled]="form.invalid">Insert</button>
-        </p>
-      </form>
-    </div>
+        <p class="button-container">
+      <button type="submit" mat-raised-button color="primary" class="max-width" [mat-dialog-close]="form.value" [disabled]="form.invalid">Insert</button>
+      </p>
+    </form>
+  </div>

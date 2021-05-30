@@ -1,27 +1,30 @@
-# Medication
+# FHIR Medication App
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.10.
 
-## Development server
+## Adatmodell
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Medication
+| Név | Kötelező | Típus | Leírás | Egyéb
+| ------ | ------ | ------ | ------ | ------ |
+| `id` | igen | **string** | A gyógyszer üzleti azonosítója. | számsor, pl. _1045813_ |
+| `code` | - | **string** | Egy kód (vagy kódok csoportja), amely meghatározza ezt a gyógyszert, vagy egy szöveges leírás, ha nincs kód. | kódok listája: [SNOMED](https://www.hl7.org/fhir/valueset-medication-codes.html) |
+| `status` | - | **string** típusú objektum | 3 állapota lehet: `active`, `inactive`, `entered-in-error` | |
+| `manufacturer` | - | **string** | A gyógyszer gyártója. |
+| `form` | - | **string** típusú objektum | A gyógyszer típusa. 3 állapota lehet: `powder`, `tablets`, `capsule` | |
+| `amount` | - | **string** | Mennyiség. | Például 3 ml |
 
-## Code scaffolding
+### Ingredient
+| Név | Kötelező | Típus | Leírás | Egyéb
+| ------ | ------ | ------ | ------ | ------ |
+| `ingId` | igen | **string** | Azonosító. | |
+| `item` | igen | objektum | A hatóanyag neve. | |
+| `isActive` | - | **boolean** típusú objektum |  |  |
+| `strength` | - | **string** | Például 75 mg. |
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Batch
+| Név | Kötelező | Típus | Leírás |
+| ------ | ------ | ------ | ------ |
+| `btid` | - | **string** típusú objektum |  Azonosító. |
+| `lotNumber` | - | **number** típusú objektum |
+| `expirationDate` | - | **string** típusú objektum |

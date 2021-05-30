@@ -5,6 +5,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { ModifyMedicationComponent } from '../modify/modify-medication.component';
 import { MedicationModifyingService } from 'src/app/shared/medication-modifying.service';
+import { MedicationComponent } from '../medication.component';
+import { formatCurrency } from '@angular/common';
 
 @Component({
   selector: 'app-list-medication',
@@ -12,7 +14,6 @@ import { MedicationModifyingService } from 'src/app/shared/medication-modifying.
   styleUrls: ['./list-medication.component.scss']
 })
 export class ListMedicationComponent implements OnInit {
-  id: string | undefined;
 
   constructor(private service: MedicationService, private service2: MedicationModifyingService<Medication>, private dialog: MatDialog) { }
 
@@ -38,33 +39,14 @@ export class ListMedicationComponent implements OnInit {
     const dialogRef = this.dialog.open(ModifyMedicationComponent, {
       data: medication
     });
-    console.log("BEFORE EDIT");
-    console.log(medication.code);
-    this.id = medication.id;
-    dialogRef.afterClosed().subscribe(async (medication: Medication) => {
+    dialogRef.afterClosed().subscribe((medication2: Medication) => {
+      console.log(medication);
       if (medication?.code) {
-        console.log(medication.id, medication.code);
-        console.log(this.id);
-        console.log("AFTER EDIT");
-        //var med = new Medication(this.id, medication.code);
-        //await this.service2.update('medication', med.id, med);
-    }
-    })
-
-    console.log("AFTER EDIT");
-
+        const med: Medication = {id: medication.id, code: medication2.code, status: medication2.status, manufacturer: medication2.manufacturer, form: medication2.form, amount: medication2.amount}
+        this.service2.update('medication', medication.id, med).then(id => { console.log(id); });
+      }
+    }, err => {
+      console.warn(err);
+    });
   }
-
- // openDialog(medication: Medication): void {
- //   const dialogRef = this.dialog.open(ModifyMedicationComponent, {
- //     data: medication
- //   });
- //   dialogRef.afterClosed().subscribe((medication: Medication) => {
- //     if (medication?.code) {
- //       console.log(medication.code);
- //     }
- //   }, err => {
- //     console.warn(err);
- //   });
- // }
 }

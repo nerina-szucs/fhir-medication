@@ -16,7 +16,7 @@
       <ng-container matColumnDef="update">
         <mat-header-cell *matHeaderCellDef>Update</mat-header-cell>
         <mat-cell *matCellDef="let batch"><button mat-button [hidden]="batch.payload.doc.data().completed"
-          (click)="markCompleted(batch)"><mat-icon>create</mat-icon></button></mat-cell>
+          (click)="openDialog(batch.payload.doc.data())"><mat-icon>create</mat-icon></button></mat-cell>
       </ng-container>
       <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
       <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>

@@ -10,10 +10,16 @@ import { Medication } from 'src/app/shared/models/medication.model';
 })
 export class ModifyMedicationComponent implements OnInit {
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: Medication, public dialogRef: MatDialogRef<ModifyMedicationComponent>) { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: Medication, public dialogRef: MatDialogRef<ModifyMedicationComponent>) {
+    this.form.controls.code.setValue(data.code);
+    this.form.controls.status.setValue(data.status);
+    this.form.controls.manufacturer.setValue(data.manufacturer);
+    this.form.controls.form.setValue(data.form);
+    this.form.controls.amount.setValue(data.amount);
+  }
 
   form: FormGroup = new FormGroup({
-    code: new FormControl(this.data.code),
+    code: new FormControl(),
     status: new FormControl(),
     manufacturer: new FormControl(),
     form: new FormControl(),
