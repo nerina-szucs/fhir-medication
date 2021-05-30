@@ -1,4 +1,5 @@
 export interface Batch {
-    lotNumber?: string;
-    expirationDate?: Date;
+    btid?: string;
+    lotNumber?: number;
+    expirationDate?: string;
   }

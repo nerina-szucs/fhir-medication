@@ -24,6 +24,8 @@ medication-icon, ingredient-icon, batch-icon {
     position: sticky;
     position: -webkit-sticky;
     top: 0;
+    left:0;
+    right:0;
     z-index: 1000;
     color:#fff;
     background-color:#004EB1 !important;
@@ -43,4 +45,16 @@ mat-sidenav {
 }
 main {
     padding: 10px;
+}
+
+@media screen and (max-width:800px) {
+.navtitle {
+    display:none;
+}
+[mat-raised-button] {
+    padding-top:2%;
+}
+mat-toolbar {
+margin-bottom:0;
+}
 }

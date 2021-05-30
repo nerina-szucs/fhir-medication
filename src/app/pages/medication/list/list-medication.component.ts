@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MedicationService } from 'src/app/shared/medication.service';
+import { Medication } from 'src/app/shared/models/medication.model';
+import { ModifymedicationComponent } from '../modify/modifymedication.component';
 
 @Component({
   selector: 'app-list-medication',
@@ -14,6 +17,10 @@ export class ListMedicationComponent implements OnInit {
     this.getMedications();
   }
 
+//  create(medication: Medication){
+//    this.service.createMedication(medication);
+//}
+
   medication: any;
    getMedications = () =>
       this.service
@@ -21,8 +28,6 @@ export class ListMedicationComponent implements OnInit {
       .subscribe(res =>(this.medication = res));
 
   displayedColumns: string[] = ['code', 'status', 'manufacturer', 'form', 'amount', 'delete', 'update'];
-
-  markCompleted = (data: any) => this.service.updateMedication(data);
 
   deleteMedication = (data: any) => this.service.deleteMedication(data);
 }

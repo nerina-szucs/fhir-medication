@@ -1,8 +1,8 @@
 export interface Medication {
     id?: string;
-    code?: number | string;
+    code?: string;
     status?: "active" | "inactive" | "entered-in-error";
     manufacturer?: string;
-    form?: "powder" | "tablets" | "capsule" | number;
-    amount?: { numerator?: number; denominator?: number; };
+    form?: "powder" | "tablets" | "capsule";
+    amount?: string;
   }

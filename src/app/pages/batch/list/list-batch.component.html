@@ -1,10 +1,11 @@
+<div class="mat-elevation-z8">
 <mat-table [dataSource]="batch">
     <ng-container matColumnDef="lotNumber">
         <mat-header-cell *matHeaderCellDef>Lot number</mat-header-cell>
         <mat-cell *matCellDef="let batch"> {{ batch.payload.doc.data().lotNumber }} </mat-cell>
       </ng-container>
       <ng-container matColumnDef="expirationDate">
-        <mat-header-cell *matHeaderCellDef>Expiration date</mat-header-cell>
+        <mat-header-cell *matHeaderCellDef>Expiration</mat-header-cell>
         <mat-cell *matCellDef="let batch"> {{ batch.payload.doc.data().expirationDate }} </mat-cell>
       </ng-container>
       <ng-container matColumnDef="delete">
@@ -20,3 +21,4 @@
       <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
       <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
 </mat-table>
+</div>

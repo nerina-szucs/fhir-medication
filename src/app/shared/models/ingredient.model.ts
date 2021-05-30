@@ -1,5 +1,6 @@
 export interface Ingredient {
+    ingId: string;
     item: string;
     isActive?: boolean;
-    strength?: {numerator?: number; denominator?: number; };
+    strength?: number;
   }

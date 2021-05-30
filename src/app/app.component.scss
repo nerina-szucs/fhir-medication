@@ -1,5 +1,7 @@
-::ng-deep router-outlet + *:not(nav) {
-    position: fixed;
-    left:20%;
-    right:20%;
- }
+@media screen and (min-width: 800px) {
+    ::ng-deep router-outlet + *:not(nav) {
+        position: fixed;
+        left:20%;
+        right:20%;
+     }
+}

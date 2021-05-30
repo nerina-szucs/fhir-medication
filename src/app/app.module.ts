@@ -16,7 +16,6 @@ import { IngredientComponent } from './pages/ingredient/ingredient.component';
 import { BatchComponent } from './pages/batch/batch.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatCardModule } from '@angular/material/card';
-import { AddMedicationComponent } from './pages/medication/add/add-medication.component';
 import { ListMedicationComponent } from './pages/medication/list/list-medication.component';
 import { ListIngredientComponent } from './pages/ingredient/list/list-ingredient.component';
 import { ListBatchComponent } from './pages/batch/list/list-batch.component';
@@ -30,6 +29,12 @@ import { environment } from "src/environments/environment";
 import {MatTableModule} from '@angular/material/table';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatSelectModule} from '@angular/material/select';
+import {MatDialogModule} from '@angular/material/dialog';
+import { AddMedicationComponent } from './pages/medication/add/add-medication.component';
+import { AddIngredientComponent } from './pages/ingredient/add/add-ingredient.component';
+import { AddBatchComponent } from './pages/batch/add/add-batch.component';
+import { IngredientService } from './shared/ingredient.service';
+import { BatchService } from './shared/batch.service';
 
 @NgModule({
   declarations: [
@@ -42,10 +47,12 @@ import {MatSelectModule} from '@angular/material/select';
     MedicationComponent,
     IngredientComponent,
     BatchComponent,
-    AddMedicationComponent,
     ListMedicationComponent,
     ListIngredientComponent,
-    ListBatchComponent
+    ListBatchComponent,
+    AddMedicationComponent,
+    AddIngredientComponent,
+    AddBatchComponent
   ],
   imports: [
     BrowserModule,
@@ -55,6 +62,7 @@ import {MatSelectModule} from '@angular/material/select';
     MatIconModule,
     MatSidenavModule,
     FormsModule,
+    MatDialogModule,
     MatFormFieldModule,
     MatSelectModule,
     MatTabsModule,
@@ -65,18 +73,17 @@ import {MatSelectModule} from '@angular/material/select';
     AngularFirestoreModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
-      {path: 'add-medication', component: AddMedicationComponent},
       {path: 'list-medication', component: ListMedicationComponent},
       {path: 'list-ingredient', component: ListIngredientComponent},
       {path: 'list-batch', component: ListBatchComponent},
       {path: '', component: HomeComponent},
       {path: 'home', component: HomeComponent},
-      {path: 'medication-list', component: MedicationComponent},
-      {path: 'ingredient-list', component: IngredientComponent},
-      {path: 'batch-list', component: BatchComponent}
+      {path: 'medication-home', component: MedicationComponent},
+      {path: 'ingredient-home', component: IngredientComponent},
+      {path: 'batch-home', component: BatchComponent}
     ]),
   ],
-  providers: [MedicationService],
+  providers: [MedicationService, IngredientService, BatchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
