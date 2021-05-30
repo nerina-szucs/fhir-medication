@@ -35,6 +35,7 @@ import { AddIngredientComponent } from './pages/ingredient/add/add-ingredient.co
 import { AddBatchComponent } from './pages/batch/add/add-batch.component';
 import { IngredientService } from './shared/ingredient.service';
 import { BatchService } from './shared/batch.service';
+import { ModifyMedicationComponent } from './pages/medication/modify/modify-medication.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { BatchService } from './shared/batch.service';
     ListBatchComponent,
     AddMedicationComponent,
     AddIngredientComponent,
-    AddBatchComponent
+    AddBatchComponent,
+    ModifyMedicationComponent
   ],
   imports: [
     BrowserModule,

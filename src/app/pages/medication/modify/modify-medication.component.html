@@ -1,0 +1,14 @@
+<div class="form-container">
+    <h1>Modify medication</h1>
+    <form [formGroup]="form">
+      <p>
+        <mat-form-field class="max-width" appearance="outline">
+          <mat-label>Code</mat-label>
+          <input type="text" name="code" matInput formControlName="code">
+        </mat-form-field>
+        </p>
+          <p class="button-container">
+        <button type="submit" mat-raised-button color="primary" class="max-width" [mat-dialog-close]="form.value" [disabled]="form.invalid">Insert</button>
+        </p>
+      </form>
+    </div>
